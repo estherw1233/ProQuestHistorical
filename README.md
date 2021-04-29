@@ -13,3 +13,5 @@ We are given a large xml file containing ads from the New York Times and Atlanti
 - Find means of measuring the accuracy/success of identifying the variables.
 - Reproducible: Our code can be applied to other newspapers as well.
 - Produce a User-Friendly dataset of our extracted information.
+
+https://nyu-dataservices.github.io/2021-love-datathon/
