@@ -1,0 +1,26 @@
+---
+title: "dau"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(XML)
+```
+
+```{r}
+print(timestamp())
+
+data <- data.frame(RecordID = "")
+
+path <- "C:/Users/86lar/Desktop/ADW_20171104201106_00034" # Change the path here
+all_files <- list.files(path, pattern = "*.xml$", full.names = FALSE)
+
+for(file_name in all_files) {
+  xmlTree <- xmlTreeParse(file = file_name)
+  temp_frame <- xmlToDataFrame(nodes =  getNodeSet(xmlRoot(xmlTree), "/"))["RecordID"]
+  data <- rbind(data, temp_frame)
+}
+
+print(timestamp())
+```
